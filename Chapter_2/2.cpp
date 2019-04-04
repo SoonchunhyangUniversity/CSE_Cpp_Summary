@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Practice
-//
-//  Created by 김민수 on 03/04/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
 #include <iostream>
 
 using namespace std;
@@ -38,7 +30,7 @@ int main()
         case 5:
             cout << "커피 선택하셨습니다." << endl;
             break;
-            
+
         default:
             cout << "오류. 선택이 유효하지 않습니다. 돈을 반환합니다." << endl;
     }

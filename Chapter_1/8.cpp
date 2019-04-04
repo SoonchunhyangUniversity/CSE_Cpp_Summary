@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Practice
-//
-//  Created by 김민수 on 03/04/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
 #include <iostream>
 
 using namespace std;
@@ -25,7 +17,7 @@ int main()
 
     cout << "중간고사 성적 : ";
     cin >> mid_term;
-    
+
     cout << "기말고사 성적 : ";
     cin >> final_term;
 

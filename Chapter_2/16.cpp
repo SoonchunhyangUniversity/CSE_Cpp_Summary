@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Practice
-//
-//  Created by 김민수 on 03/04/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
 #include <iostream>
 #include <ctime>
 
