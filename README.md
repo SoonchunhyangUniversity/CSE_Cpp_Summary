@@ -1,2 +1,5 @@
-# CSE_Cpp_Summary
-SoonChunHyang University C++ Summary
+## C++ 프로그래밍 과제 모음
+
+### 전유부 교수
+
+### 2019년 1학기 수 : 14:00 ~ 17:00
