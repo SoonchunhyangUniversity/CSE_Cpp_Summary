@@ -31,7 +31,7 @@ int main()
         cout << anagram << "은 어떤 단어가 스크램블된 것일까요? ";
         cin >> input;
 
-        if (anagram.compare(input))
+        if (str.compare(input) == 0)
         {
             cout << "축하합니다." << endl;
             break;
