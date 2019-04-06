@@ -19,7 +19,7 @@ public:
         this->num = num;
     }
 
-    void print() const
+    void print()
     {
         cout << "문자메시지 " << "#" << this->getNum() << endl;
         cout << "발신자 : " << this->getSender();

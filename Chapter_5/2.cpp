@@ -29,7 +29,7 @@ public:
         this->speed = speed;
     }
 
-    void print() const
+    void print()
     {
         cout << "비행기 이름 : " << this->getName() << endl;
         cout << "비행기 용량 : " << this->getCapacity() << endl;
