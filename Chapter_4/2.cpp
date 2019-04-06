@@ -17,7 +17,7 @@ public:
         this->cpu_speed = cpu_speed;
     }
 
-    void print()
+    void print() const
     {
         cout << "이름 : " << this->name << endl;
         cout << "RAM : " << this->RAM << endl;

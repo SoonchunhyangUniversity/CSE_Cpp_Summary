@@ -17,7 +17,7 @@ public:
         this->salary = salary;
     }
 
-    void print()
+    void print() const
     {
         cout << this->name << endl;
         cout << this->age << endl;

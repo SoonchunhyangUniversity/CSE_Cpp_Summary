@@ -9,7 +9,7 @@ public:
     double i;
     char oper;
 
-    void print()
+    void print() const
     {
         cout << r << " " << oper << " " << i << "i" << endl;
     }
