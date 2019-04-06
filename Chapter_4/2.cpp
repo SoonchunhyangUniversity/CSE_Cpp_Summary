@@ -9,20 +9,20 @@ class Computer
     int RAM;
     double cpu_speed;
 
-    public:
-        void setComputer(string name, int RAM, double cpu_speed)
-        {
-            this->name = name;
-            this->RAM = RAM;
-            this->cpu_speed = cpu_speed;
-        }
+public:
+    void setComputer(string name, int RAM, double cpu_speed)
+    {
+        this->name = name;
+        this->RAM = RAM;
+        this->cpu_speed = cpu_speed;
+    }
 
-        void print()
-        {
-            cout << "이름 : " << this->name << endl;
-            cout << "RAM : " << this->RAM << endl;
-            cout << "CPU 속도 : " << this->cpu_speed << endl;
-        }
+    void print()
+    {
+        cout << "이름 : " << this->name << endl;
+        cout << "RAM : " << this->RAM << endl;
+        cout << "CPU 속도 : " << this->cpu_speed << endl;
+    }
 };
 
 int main()
