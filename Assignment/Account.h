@@ -1,44 +1,36 @@
-//
-//  Account.h
-//  Practice
-//
-//  Created by 김민수 on 29/05/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
 #ifndef Account_h
 #define Account_h
-#include <iostream>
-#include "BankingCommonDecl.h"
-/* ------------------------
- * 고객의 계좌정보 클래스
- * ------------------------
- * Member Variable
- * account : 계좌번호
- * balance : 고객잔액
- * phone_number : 휴대폰번호
- * name : 고객이름
- * ------------------------
+#include "String.h"
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 계좌 정보 클래스
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Member Variables
+ * accountNumber : 계좌번호
+ * name : 이름
+ * balance : 예금액
+ * phoneNumber : 전화번호 (요구사항에 있지만 예제에 없어서 제거)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Member Method
- * getter, setter로 구성
- * ------------------------
+ * Account(accountNumber, name, &money) : 생성자
+ * deposit(&money) : 입금
+ * withdraw(&money) : 출금
+ * showAccountInfo() : 계좌정보출력
+ * getAccountNumber() : 계좌번호반환
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-class bankAccount
+class Account
 {
-    int account;
+    int accountNumber;
+    String name;
     int balance;
-    string phone_number;
-    string name;
     
 public:
-    void setAccount(int account);
-    void setBalance(int balance);
-    void setPhoneNumber(string phone_number);
-    void setName(string name);
-    int getAccount();
-    int getBalance();
-    string getPhoneNumber();
-    string getName();
+    Account (const int accountNumber, const String name, const int &money);
+    virtual bool deposit(const int &money);
+    bool withdraw(const int &money);
+    virtual void showAccountInfo() const;
+    int getAccountNumber() const;
 };
 
-#endif /* Account_h */
+#endif

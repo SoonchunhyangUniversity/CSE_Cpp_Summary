@@ -1,51 +1,42 @@
-//
-//  Account.cpp
-//  Practice
-//
-//  Created by 김민수 on 29/05/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
+#include "BankingCommonDecl.h"
 #include "Account.h"
 
-using namespace std;
-
-void bankAccount :: setAccount(int account)
+Account::Account (const int accountNumber, const String name, const int &money) : balance(money)
 {
-    this->account = account;
-}
-
-void bankAccount :: setBalance(int balance)
-{
-    this->balance = balance;
-}
-
-void bankAccount :: setPhoneNumber(string phone_number)
-{
-    this->phone_number = phone_number;
-}
-
-void bankAccount :: setName(string name)
-{
+    this->accountNumber = accountNumber;
     this->name = name;
 }
 
-int bankAccount :: getAccount()
+bool Account::deposit(const int &money)
 {
-    return this->account;
+    if (money <= 0)
+        throw LowerMoneyException(money);
+    
+    balance += money;
+    
+    return true;
 }
 
-int bankAccount :: getBalance()
+bool Account::withdraw(const int &money)
 {
-    return this->balance;
+    if (money <= 0)
+        throw LowerMoneyException(money);
+    if (money > balance)
+        throw WithdrawException(balance);
+    
+    balance -= money;
+    
+    return true;
 }
 
-string bankAccount :: getPhoneNumber()
+void Account::showAccountInfo() const
 {
-    return this->phone_number;
+    cout << "계좌ID : " << accountNumber << endl;
+    cout << "이  름 : " << name << endl;
+    cout << "입금액 : " << balance << endl;
 }
 
-string bankAccount :: getName()
+int Account::getAccountNumber() const
 {
-    return this->name;
+    return accountNumber;
 }

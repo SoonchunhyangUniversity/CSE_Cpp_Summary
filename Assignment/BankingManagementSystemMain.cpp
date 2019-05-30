@@ -1,59 +1,44 @@
-//
-//  BankingManagementSystemMain.cpp
-//  Practice
-//
-//  Created by 김민수 on 29/05/2019.
-//  Copyright © 2019 SCH. All rights reserved.
-//
-
-#include "String.h"
+#include "BankingCommonDecl.h"
+#include "AccountHandler.h"
 
 using namespace std;
 
-void printMenu()
-{
-    cout <<
-    "---------- Menu ----------" << endl
-    << "1. 계좌개설" << endl
-    << "2. 입    금" << endl
-    << "3. 출    금" << endl
-    << "4. 계좌정보 전체 출력" << endl
-    << "5. 프로그램 종료" << endl << endl;
-}
-
 int main()
 {
-    int input = 0;
+    BankingManagementSystem bmsHandler;
+    int input;
     
-    do
+    while (true)
     {
-        printMenu();
-        
-        cout << "   선택 : ";
+        bmsHandler.showMenu();
         cin >> input;
         
-        switch(input)
+        switch (input)
         {
-            case 1:
+            case BankingManagementSystem::CREATE:
+                bmsHandler.makeAccount();
                 break;
                 
-            case 2:
+            case BankingManagementSystem::DEPOSIT:
+                bmsHandler.deposit();
                 break;
                 
-            case 3:
+            case BankingManagementSystem::WITHDRAW:
+                bmsHandler.withdraw();
                 break;
                 
-            case 4:
+            case BankingManagementSystem::SHOW:
+                bmsHandler.showAllAccountInfo();
                 break;
                 
-            case 5:
-                break;
+            case BankingManagementSystem::FINISH:
+                bmsHandler.finish();
                 
             default:
-                cout << "Input Error!" << endl;
-                break;
+                continue;
         }
-    } while (input != 5);
+        getch();
+    }
     
     return 0;
 }
