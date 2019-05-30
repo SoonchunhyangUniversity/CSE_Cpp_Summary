@@ -18,6 +18,7 @@ class NormalAccount : public Account
     int rate;
     
 public:
+    // 클래스 생성자
     NormalAccount(const int accountNumber,
                   const String name,
                   int money,
@@ -26,22 +27,27 @@ public:
         
     }
     
+    // 클래스 소멸자
     ~NormalAccount()
     {
         
     }
     
+    // 입금 함수
     bool deposit(const int &money)
     {
+        // 입금이 실패한 경우
         if (!Account::deposit(money))
             return false;
         
+        // 이율 적용이 실패한 경우
         if (!Account::deposit((int) (money * (rate / 100.0f))))
             return false;
         
-        return true;
+        return true; // 입금 성공
     }
     
+    // 계좌 정보 출력 함수
     void showAccountInfo() const
     {
         cout << "[보통 예금계좌]" << endl;

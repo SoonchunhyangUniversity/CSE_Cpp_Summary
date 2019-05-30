@@ -6,6 +6,15 @@
 
 using namespace std;
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * [BankingException 클래스]
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Member Variables
+ * data : 금액
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * showExceptionLog : 예외 출력 가상함수
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 class BankingException
 {
     int data;
@@ -14,7 +23,15 @@ public:
     virtual void showExceptionLog() const = 0;
 };
 
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * [WithdrawException 출금 예외 클래스]
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * BankingException 상속
+ * @param data [금액]
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 부모 클래스의 가상함수 구현
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 class WithdrawException : public BankingException
 {
     int data;
@@ -32,7 +49,15 @@ public:
     }
 };
 
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * [LowerMoneyException 잔액 부족 예외 클래스]
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * BankingException 상속
+ * @param data [금액]
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 부모 클래스의 가상함수 구현
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 class LowerMoneyException : public BankingException
 {
     int data;

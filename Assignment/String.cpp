@@ -1,10 +1,12 @@
 #include "String.h"
 
+// String 클래스 생성자 (매개변수 없음)
 String::String() : str(NULL), len(0)
 {
     
 }
 
+// String 클래스 생성자 (매개변수 있음 pointer)
 String::String(const char *s)
 {
     len = strlen(s) + 1;
@@ -12,6 +14,7 @@ String::String(const char *s)
     strcpy(str, s);
 }
 
+// String 클래스 생성자 (매개변수 있음 reference)
 String::String(const String &s)
 {
     len = s.len;
@@ -19,6 +22,7 @@ String::String(const String &s)
     strcpy(str, s.str);
 }
 
+// =연산자 재정의 return by reference
 String& String::operator=(const String &s)
 {
     if (str != NULL)
@@ -31,6 +35,7 @@ String& String::operator=(const String &s)
     return *this;
 }
 
+// +연산자 재정의
 String String::operator+(const String &s)
 {
     char *tempstr = new char[len + s.len - 1];
@@ -42,29 +47,33 @@ String String::operator+(const String &s)
     return temp;
 }
 
+// +=연산자 재정의 return by reference
 String& String::operator+=(const String &s)
 {
     *this = (*this + s);
     return *this;
 }
 
+// ==연산자 재정의
 bool String::operator==(const String &s)
 {
     return strcmp(str, s.str) == 0 ? true : false;
 }
 
+// 소멸자 정의
 String::~String()
 {
     if (str != NULL)
         delete []str;
 }
-
+// cout의 << 재정의
 ostream& operator<< (ostream& os, const String &s)
 {
     os << s.str;
     return os;
 }
 
+// cin의 >> 재정의
 istream& operator>> (istream& is, String &s)
 {
     char temp[50];
