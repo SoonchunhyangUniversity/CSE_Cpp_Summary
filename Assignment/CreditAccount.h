@@ -1,10 +1,10 @@
 #ifndef CreditAccount_h
 #define CreditAccount_h
 #include "NormalAccount.h"
-#include "BankingCommonDecl.h"
+#include "String.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 보통 계좌 정보 클래스 (NormalAccount class 상속)
+ * 신용 계좌 정보 클래스 (NormalAccount class 상속)
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Member Variables
  * specRate : 등급 이자율
@@ -19,6 +19,7 @@ class CreditAccount : public NormalAccount
     
 public:
     enum { A = 1, B, C };
+    // Ato1, Bto2, Cto3
     
     CreditAccount(const int accountNumber,
                   const String name,

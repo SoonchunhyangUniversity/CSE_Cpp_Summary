@@ -12,6 +12,7 @@ int main()
     {
         bmsHandler.showMenu();
         cin >> input;
+        cout << endl;
         
         switch (input)
         {
@@ -37,7 +38,6 @@ int main()
             default:
                 continue;
         }
-        getch();
     }
     
     return 0;

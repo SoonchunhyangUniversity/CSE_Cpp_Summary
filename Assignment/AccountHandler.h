@@ -1,5 +1,8 @@
 #ifndef AccountHandler_h
 #define AccountHandler_h
+#include <iostream>
+
+using namespace std;
 
 class Account;
 
@@ -20,10 +23,37 @@ class ArrayLengthChecker
     }
     
 public:
-    ArrayLengthChecker(int len = 100);
-    ~ArrayLengthChecker();
-    T& operator[] (const int &idx);
-    T operator[] (const int &idx) const;
+    ArrayLengthChecker(int len) : arrLen(len)
+    {
+        arr = new T[len];
+    }
+    
+    ~ArrayLengthChecker()
+    {
+        delete []arr;
+    }
+    
+    T& operator[](const int &idx)
+    {
+        if (idx < 0 || idx >= arrLen)
+        {
+            cout << "배열 범위 초과" << endl;
+            exit(1);
+        }
+        
+        return arr[idx];
+    }
+    
+    T operator[](const int &idx) const
+    {
+        if (idx < 0 || idx >= arrLen)
+        {
+            cout << "배열 범위 초과" << endl;
+            exit(1);
+        }
+        
+        return arr[idx];
+    }
 };
 
 

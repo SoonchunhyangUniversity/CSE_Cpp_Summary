@@ -1,10 +1,30 @@
 #include "AccountHandler.h"
 #include "BankingCommonDecl.h"
 #include "String.h"
-#include "NormalAccount.h"
+#include "Account.h"
 #include "CreditAccount.h"
+#include "NormalAccount.h"
 
 using namespace std;
+
+int accountStrToInt(string account)
+{
+    string delimiter = "-";
+    string temp = account;
+    string result = "";
+    size_t last = 0;
+    size_t next = 0;
+    
+    while ((next = account.find(delimiter, last)) != string::npos)
+    {
+        result += temp.substr(last, next - last);
+        last = next + 1;
+    }
+    
+    result += temp.substr(last, next - last);
+    
+    return stoi(result);
+}
 
 BankingManagementSystem:: BankingManagementSystem() : accountList(100), account_num(0)
 {
@@ -28,7 +48,7 @@ void BankingManagementSystem:: makeAccount()
 {
     int input;
         
-    cout << endl << "[계좌종류 선택]" << endl;
+    cout << "[계좌종류 선택]" << endl;
     cout << "1. 보통예금   2. 신용예금" << endl;
     cout << "   선택 : ";
         
@@ -157,9 +177,12 @@ void BankingManagementSystem::showAllAccountInfo()
     }
     
     for (int i = 0; i < account_num; i++)
+    {
         accountList[i]->showAccountInfo();
+        cout << endl;
+    }
     
-    cout << endl << account_num << "의 계좌 조회" << endl;
+    cout << account_num << "의 계좌 조회" << endl;
 }
 
 void BankingManagementSystem::finish()
@@ -185,6 +208,16 @@ void BankingManagementSystem::makeNormalAccount()
     cout << "이자율 : "; cin >> rate;
     
     accountInt = accountStrToInt(accountStr);
+    
+    for (int i = 0; i < account_num; i++)
+    {
+        if (accountList[i]->getAccountNumber() == accountInt)
+        {
+            cout << endl << "동일 계좌번호가 존재합니다." << endl;
+            cout << "다시 계좌를 생성해주세요." << endl;
+            return;
+        }
+    }
         
     accountList[account_num++] = new NormalAccount(accountInt, name, money, rate);
 }
@@ -207,41 +240,15 @@ void BankingManagementSystem::makeCreditAccount()
     
     accountInt = accountStrToInt(accountStr);
     
+    for (int i = 0; i < account_num; i++)
+    {
+        if (accountList[i]->getAccountNumber() == accountInt)
+        {
+            cout << endl << "동일 계좌번호가 존재합니다." << endl;
+            cout << "다시 계좌를 생성해주세요." << endl;
+            return;
+        }
+    }
+    
     accountList[account_num++] = new CreditAccount(accountInt, name, money, rate, specRate);
-}
-
-template <typename T>
-ArrayLengthChecker<T>::ArrayLengthChecker(int len) : arrLen(len)
-{
-    arr = new T[len];
-}
-
-template <typename T>
-ArrayLengthChecker<T>::~ArrayLengthChecker()
-{
-    delete []arr;
-}
-
-template <typename T>
-T& ArrayLengthChecker<T>::operator[](const int &idx)
-{
-    if (idx < 0 || idx >= arrLen)
-    {
-        cout << "배열 범위 초과" << endl;
-        exit(1);
-    }
-    
-    return arr[idx];
-}
-
-template <typename T>
-T ArrayLengthChecker<T>::operator[](const int &idx) const
-{
-    if (idx < 0 || idx >= arrLen)
-    {
-        cout << "배열 범위 초과" << endl;
-        exit(1);
-    }
-    
-    return arr[idx];
 }

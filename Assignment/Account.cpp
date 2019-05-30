@@ -1,4 +1,3 @@
-#include "BankingCommonDecl.h"
 #include "Account.h"
 
 Account::Account (const int accountNumber, const String name, const int &money) : balance(money)

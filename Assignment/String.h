@@ -1,6 +1,5 @@
 #ifndef String_h
 #define String_h
-#include <iostream>
 #include "BankingCommonDecl.h"
 
 int accountStrToInt(string account);

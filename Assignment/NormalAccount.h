@@ -1,7 +1,7 @@
 #ifndef NormalAccount_h
 #define NormalAccount_h
-#include "BankingCommonDecl.h"
 #include "Account.h"
+#include "String.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 보통 계좌 정보 클래스 (Account class 상속)
