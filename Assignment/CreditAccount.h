@@ -28,19 +28,19 @@ public:
                   int rate,
                   int specRate): NormalAccount(accountNumber, name, money, rate)
     {
-        switch (specRate) 
+        switch (specRate)
         {
-            // 1 : A (7%의 신용 이자율)
+                // 1 : A (7%의 신용 이자율)
             case A:
                 this->specRate = 7;
                 break;
                 
-            // 2 : B (4%의 신용 이자율)
+                // 2 : B (4%의 신용 이자율)
             case B:
                 this->specRate = 4;
                 break;
                 
-            // 3 : C (2%의 신용 이자율)
+                // 3 : C (2%의 신용 이자율)
             case C:
                 this->specRate = 2;
                 break;

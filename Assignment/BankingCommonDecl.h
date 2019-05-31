@@ -42,7 +42,7 @@ public:
         
     }
     
-    virtual void showExceptionLog(void) const
+    virtual void showExceptionLog() const
     {
         cout << "예금된 금액보다 적은 금액을 출금하세요." << endl;
         cout << "현재 잔액 : " << data << endl;
@@ -68,7 +68,7 @@ public:
         
     }
     
-    virtual void showExceptionLog(void) const
+    virtual void showExceptionLog() const
     {
         cout << data << "원을 요청하셨습니다." << endl;
         cout << "0원보다 큰 금액을 입력해주세요." << endl;

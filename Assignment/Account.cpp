@@ -37,6 +37,12 @@ bool Account::deposit(const int &money)
  */
 bool Account::withdraw(const int &money)
 {
+    if (this->balance == 0)
+    {
+        cout << "잔액이 0원 입니다." << endl;
+        return false;
+    }
+    
     if (money <= 0)
         throw LowerMoneyException(money);
     if (money > balance)

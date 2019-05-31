@@ -23,7 +23,7 @@
 class String
 {
     char *str;
-    int len;
+    unsigned long len;
     
 public:
     String();

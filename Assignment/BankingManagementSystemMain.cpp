@@ -18,27 +18,27 @@ int main()
         
         switch (input)
         {
-            // 1 : CREATE (계좌 생성)
+                // 1 : CREATE (계좌 생성)
             case BankingManagementSystem::CREATE:
                 bmsHandler.makeAccount();
                 break;
                 
-            // 2 : DEPOSIT (입금)
+                // 2 : DEPOSIT (입금)
             case BankingManagementSystem::DEPOSIT:
                 bmsHandler.deposit();
                 break;
                 
-            // 3 : WITHDRAW (출금)
+                // 3 : WITHDRAW (출금)
             case BankingManagementSystem::WITHDRAW:
                 bmsHandler.withdraw();
                 break;
                 
-            // 4 : SHOW (모든 계좌정보 출력)
+                // 4 : SHOW (모든 계좌정보 출력)
             case BankingManagementSystem::SHOW:
                 bmsHandler.showAllAccountInfo();
                 break;
                 
-            // 5 : FINISH (프로그램 종료)
+                // 5 : FINISH (프로그램 종료)
             case BankingManagementSystem::FINISH:
                 bmsHandler.finish();
                 

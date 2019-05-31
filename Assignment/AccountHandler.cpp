@@ -72,26 +72,26 @@ void BankingManagementSystem:: showMenu()
 void BankingManagementSystem:: makeAccount()
 {
     int input;
-        
+    
     cout << "[계좌종류 선택]" << endl;
     cout << "1. 보통예금   2. 신용예금" << endl;
     cout << "   선택 : ";
-        
+    
     cin >> input;
     cout << endl;
-        
+    
     switch (input)
     {
-        // 1 : NORMAL (보통계좌 생성)
+            // 1 : NORMAL (보통계좌 생성)
         case BankingManagementSystem::NORMAL:
             makeNormalAccount();
             break;
-                
-        // 2 : CREDIT (신용계좌 생성)
+            
+            // 2 : CREDIT (신용계좌 생성)
         case BankingManagementSystem::CREDIT:
             makeCreditAccount();
             break;
-                
+            
         default:
             break;
     }
@@ -198,7 +198,7 @@ void BankingManagementSystem::withdraw()
                     
                     else
                     {
-                        cout << "입금실패" << endl;
+                        cout << "출금실패" << endl;
                         return;
                     }
                 }
@@ -263,7 +263,7 @@ void BankingManagementSystem::makeNormalAccount()
     int accountInt;
     int money;
     int rate;
-        
+    
     // 변수에 값 입력
     cout << "[보통예금 개설]" << endl;
     cout << "계좌ID : "; cin >> accountStr;
