@@ -82,12 +82,12 @@ void BankingManagementSystem:: makeAccount()
     
     switch (input)
     {
-            // 1 : NORMAL (보통계좌 생성)
+        // 1 : NORMAL (보통계좌 생성)
         case BankingManagementSystem::NORMAL:
             makeNormalAccount();
             break;
             
-            // 2 : CREDIT (신용계좌 생성)
+        // 2 : CREDIT (신용계좌 생성)
         case BankingManagementSystem::CREDIT:
             makeCreditAccount();
             break;
