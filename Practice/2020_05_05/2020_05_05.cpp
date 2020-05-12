@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <stdarg.h>
 
 using namespace std;
 
@@ -138,17 +139,43 @@ void exampleSixFifteen()
     cout << "\n";
 }
 
+void useSystem(int args, ...)
+{
+    va_list ap;
+
+	va_start(ap, args);
+
+	for (int i = 0; i < args; i++)
+    {
+        char *oper = va_arg(ap, char *);
+        system(oper);
+    }
+
+    va_end(ap);
+}
+
 int main(int argc, const char * argv[])
 {
     exampleSixNine();
+    useSystem(2, "pause", "cls");
+
     exampleSixTen();
+    useSystem(2, "pause", "cls");
+
     exampleSixEleven();
+    useSystem(2, "pause", "cls");
+
     exampleSixTwelve();
+    useSystem(2, "pause", "cls");
+
     exampleSixThirteen();
+    useSystem(2, "pause", "cls");
+
     exampleSixFourteen();
+    useSystem(2, "pause", "cls");
+
     exampleSixFifteen();
-    
-    system("read");
+    useSystem(1, "pause");
     
     return 0;
 }
