@@ -154,6 +154,11 @@ void useSystem(int args, ...)
     va_end(ap);
 }
 
+void printStudentInfo()
+{
+     std::cout << "\n201744444 - 김민수" << std::endl;
+}
+
 int main(int argc, const char * argv[])
 {
     exampleSixNine();
@@ -175,6 +180,7 @@ int main(int argc, const char * argv[])
     useSystem(2, "pause", "cls");
 
     exampleSixFifteen();
+    printStudentInfo();
     useSystem(1, "pause");
     
     return 0;
