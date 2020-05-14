@@ -40,7 +40,7 @@ void eaxampleSixSixteen()
             cout << "\t " << &arr1[r][c];
         }
     }
-    cout << "\n";
+    cout << "\n\n";
 }
 
 void exampleSixSeventeen()
@@ -60,6 +60,8 @@ void exampleSixSeventeen()
     cout << "\n\n각 행의 첫번째 열에 위치한 원소\n";
     cout << "-------------------------------------------------------------------\n";
     cout << "  *a[0]=" << *arr1[0] << "\t *a[1]=" << *arr1[1] << "\t *a[2]=" << *arr1[2] << "\n";
+
+	cout << "\n";
 }
 
 void exampleSixEighteen()
@@ -72,6 +74,8 @@ void exampleSixEighteen()
     cout << "------------------------\n";
     cout << " a + 1 : " << arr1 + 1 << "\n";
     cout << " a + 2 : " << arr1 + 2 << "\n";
+
+	cout << "\n";
 }
 
 void exampleSixNineteen()
@@ -86,6 +90,8 @@ void exampleSixNineteen()
         }
         cout << "\n";
     }
+
+	cout << "\n";
 }
 
 void sevenOnePrn(int *pa, int size)
@@ -94,6 +100,7 @@ void sevenOnePrn(int *pa, int size)
     {
         cout << "\t" << *(pa+i);
     }
+
     cout << "\n";
 }
 
@@ -102,6 +109,8 @@ void exampleSevenOne()
     cout << "예제 7-1 (배열의 원소를 출력하는 함수 사용하기) 실행 결과\n\n";
     
     sevenOnePrn(arr2, 5);
+
+	cout << "\n";
 }
 
 void sevenTwoPrn(int a[], int size)
@@ -118,6 +127,8 @@ void exampleSevenTwo()
     
     sevenTwoPrn(arr2, 5);
     cout << " main 함수 sizeof(a) : " << sizeof(arr2) << endl;
+
+	cout << "\n";
 }
 
 void sevenThreePrn(int (*p)[COL])
@@ -134,6 +145,8 @@ void exampleSevenThree()
 {
     cout << "예제 7-3 (2차원 배열을 전달받는 함수 작성하기) 실행 결과\n\n";
     sevenThreePrn(arr1);
+
+	cout << "\n";
 }
 
 void sevenFourPrn(int p[][4])
@@ -155,6 +168,8 @@ void exampleSevenFour()
     
     cout << "main sizeof(a) = " << sizeof(arr1) << "\n";
     sevenFourPrn(arr1);
+
+	cout << "\n";
 }
 
 void sevenFivePrn(const int *p, int size)
@@ -172,6 +187,8 @@ void exampleSevenFive()
     int size = sizeof(arr2) / sizeof(arr2[0]);
     
     sevenFivePrn(arr2, size);
+
+	cout << "\n";
 }
 
 void exampleSevenSix()
@@ -181,14 +198,16 @@ void exampleSevenSix()
     char str[25] = "Apple";
     char *ptr = "Banana";
     
-    cout << "  str = " << (uintptr_t)str << " \t str = " << str << "\n";
-    cout << "  ptr = " << (uintptr_t)ptr << " \t ptr = " << ptr << "\n";
+    cout << "  str = " << (int)str << " \t str = " << str << "\n";
+    cout << "  ptr = " << (int)ptr << " \t ptr = " << ptr << "\n";
     
     // str = "Grapes";
     
     ptr = "Orange";
     
     cout << "  ptr = " << (uintptr_t)ptr << "\t ptr = " << ptr << "\n";
+
+	cout << "\n";
 }
 
 void useSystem(int args, ...)
@@ -215,37 +234,37 @@ int main(int argc, const char * argv[])
 {
     
     eaxampleSixSixteen();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSixSeventeen();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSixEighteen();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSixNineteen();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenOne();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenTwo();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenThree();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenFour();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenFive();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     exampleSevenSix();
-    useSystem(2, "read", "clear");
+    useSystem(2, "pause", "cls");
     
     printStudentInfo();
-    useSystem(2, "read");
+    useSystem(2, "pause");
     
     return 0;
 }
